@@ -10,8 +10,15 @@ for(const btn of allBtn ){
         const category =event.target.parentNode.childNodes[5].childNodes[1].innerText;
 
       const selectedContainer =document.getElementById('selected-players-container');
-
+        event.target.setAttribute("disabled",false);
        
+       
+   const firstCount = getConvertedValue('cart');
+   if(firstCount+1>6){
+    alert("limited");
+    return;
+   }
+   event.target.parentNode.style.backgroundColor="gray";
       const budget = getConvertedValue("budget");
         document.getElementById("budget").innerText=budget-parseInt(price);
        
